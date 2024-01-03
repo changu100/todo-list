@@ -10,8 +10,8 @@ import java.time.ZonedDateTime
 class TodoListService (
     private val todoListRepository: TodoListRepository
 ){
-    fun createTodoList(todoListDto: TodoListDto): String{
-        val result = todoListRepository.save(
+    fun createTodoList(todoListDto: TodoListDto): TodoListDto{
+        return todoListRepository.save(
             TodoList(
                 title = todoListDto.title,
                 description = todoListDto.description,
@@ -19,6 +19,5 @@ class TodoListService (
                 createdAt = ZonedDateTime.now()
             )
         ).toDto()
-        return result.createdAt.toString()
     }
 }
