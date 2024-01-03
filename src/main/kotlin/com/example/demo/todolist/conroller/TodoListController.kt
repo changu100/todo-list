@@ -1,5 +1,7 @@
 package com.example.demo.todolist.conroller
 
+import com.example.demo.todolist.service.TodoListService
+import com.example.demo.todolist.service.dto.TodoListDto
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -13,12 +15,22 @@ data class CreateTodoListRequest(
 )
 @RestController
 @RequestMapping("/api/v1/todo-list")
-class TodoListController {
+class TodoListController(
+    private val todoListService: TodoListService
+) {
 
     @PostMapping
     fun createTodoList(
         @RequestBody request: CreateTodoListRequest,
     ) : ResponseEntity<String>{
-        return ResponseEntity.status(200).body("success")
+        return ResponseEntity.status(200).body(
+            todoListService.createTodoList(
+                TodoListDto(
+                    title = request.title,
+                    description = request.description,
+                    userName = request.userName,
+                )
+            )
+        )
     }
 }
