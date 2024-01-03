@@ -35,6 +35,9 @@ dependencies {
 
 
 
+    //postgresql
+    runtimeOnly("org.postgresql:postgresql")
+
     // jpa
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 

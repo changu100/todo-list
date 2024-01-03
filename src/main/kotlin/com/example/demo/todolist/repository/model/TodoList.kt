@@ -6,9 +6,11 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jakarta.persistence.Table
 import java.time.ZonedDateTime
 
 @Entity
+@Table(name = "todo-list")
 class TodoList(
     @Column(name = "title")
     private var title: String? = null,

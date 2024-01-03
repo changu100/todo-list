@@ -1,0 +1,15 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://sparta-coding-club.clmwuysmy0m5.ap-northeast-2.rds.amazonaws.com:5432/postgres
+    username: webServer
+    password: dlojjH^mX2$
+
+jpa:
+  properties:
+    hibernate:
+      format_sql: true
+      highlight_sql: true
+      use_sql_comments: true
+      ddl-auto: create
+      show-sql: true
