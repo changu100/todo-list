@@ -20,4 +20,9 @@ class TodoListService (
             )
         ).toDto()
     }
+
+
+    fun getTodoList(id:Long): TodoListDto{
+        return todoListRepository.findById(id).get().toDto()
+    }
 }
