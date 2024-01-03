@@ -35,6 +35,9 @@ dependencies {
 
 
 
+    // jpa
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
     //swagger
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
 }
